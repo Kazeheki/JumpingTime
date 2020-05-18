@@ -44,4 +44,11 @@ public class GameEvents : MonoBehaviour
     {
         OnIncreaseHealth?.Invoke(amount);
     }
+
+    public static event Action<int> OnIncreaseScore;
+
+    public static void IncreaseScore(int amount)
+    {
+        OnIncreaseScore?.Invoke(amount);
+    }
 }
