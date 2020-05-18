@@ -34,6 +34,7 @@ public class Health : MonoBehaviour
         GameEvents.OnDeadlyHit -= OnDeadlyHit;
         GameEvents.OnHit -= OnHit;
         GameEvents.OnRestart -= OnRestart;
+        GameEvents.OnIncreaseHealth -= OnIncreaseHealth;
     }
 
     private void OnEnable()
@@ -41,6 +42,7 @@ public class Health : MonoBehaviour
         GameEvents.OnDeadlyHit += OnDeadlyHit;
         GameEvents.OnHit += OnHit;
         GameEvents.OnRestart += OnRestart;
+        GameEvents.OnIncreaseHealth += OnIncreaseHealth;
     }
 
     private IEnumerator FirstNotifyWithWait()
@@ -64,6 +66,19 @@ public class Health : MonoBehaviour
     private void OnRestart()
     {
         m_CurrentHealth = m_MaxHealth;
+        NotifyListeners();
+    }
+
+    private void OnIncreaseHealth(int amount)
+    {
+        if (m_CurrentHealth + amount > m_MaxHealth)
+        {
+            m_CurrentHealth = m_MaxHealth;
+        }
+        else
+        {
+            m_CurrentHealth += amount;
+        }
         NotifyListeners();
     }
 

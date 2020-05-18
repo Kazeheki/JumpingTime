@@ -37,4 +37,11 @@ public class GameEvents : MonoBehaviour
     {
         OnGameOver?.Invoke();
     }
+
+    public static event Action<int> OnIncreaseHealth;
+
+    public static void IncreaseHealth(int amount)
+    {
+        OnIncreaseHealth?.Invoke(amount);
+    }
 }
