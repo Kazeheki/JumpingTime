@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
     [SerializeField]
-    private string m_SceneName;
+    private string m_SceneName = "Scene name here";
 
     private void Start()
     {
