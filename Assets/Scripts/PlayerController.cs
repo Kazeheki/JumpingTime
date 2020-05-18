@@ -58,19 +58,4 @@ public class PlayerController : MonoBehaviour
         Fall();
         FollowMouse();
     }
-
-    private void OnEnable()
-    {
-        GameEvents.OnRestart += OnRestart;
-    }
-
-    private void OnDisable()
-    {
-        GameEvents.OnRestart -= OnRestart;
-    }
-
-    private void OnRestart()
-    {
-        this.transform.position = m_InitalPosition;
-    }
 }
