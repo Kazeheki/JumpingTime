@@ -1009,7 +1009,6 @@ GameObject:
   - component: {fileID: 1090536419}
   - component: {fileID: 1090536418}
   - component: {fileID: 1090536417}
-  - component: {fileID: 1090536422}
   - component: {fileID: 1090536421}
   - component: {fileID: 1090536420}
   - component: {fileID: 1090536423}
@@ -1127,49 +1126,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1090536422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090536415}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 14fb8f76564af6943b62479828cf7e61,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 558520e7-6947-403f-885f-2ac3dabc7800
-    m_ActionName: GameManager/Restart[/Keyboard/r]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9f1f6d5c-66d9-484c-9e83-61e0bf9d81a4
-    m_ActionName: GameManager/Pause[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 515c9df1-0c52-41c4-96c1-8c88f97b3ef5
-    m_ActionName: GameManager/Jump[/Mouse/leftButton]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: GameManager
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &1090536423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,7 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caecf17ace76ed744945f65d62abc44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHealth: 10
+  m_MaxHealth: 3
 --- !u!1 &1205646184
 GameObject:
   m_ObjectHideFlags: 0
