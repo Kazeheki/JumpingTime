@@ -18,11 +18,14 @@ public class CollectableManager : MonoBehaviour
     [SerializeField]
     private float m_Radius = 1f;
 
+    [SerializeField]
+    private float m_OffsetY = 0f;
+
     private Collectable m_CurrentCollectable = null;
 
     private void Awake()
     {
-        m_CurrentCollectable = Instantiate(m_CollectablePrefab, m_AreaOrigin, Quaternion.identity, m_Parent);
+        m_CurrentCollectable = Instantiate(m_CollectablePrefab, m_CollectablePrefab.transform.position, m_CollectablePrefab.transform.rotation, m_Parent);
         if (m_CurrentCollectable == null)
         {
             Debug.LogError("Couldn't instantiate collectable!");
@@ -55,7 +58,8 @@ public class CollectableManager : MonoBehaviour
         // insideUnitCircle will only set x and y
         // collectable will move on x and z axis though.
         position.z = position.y;
-        position.y = m_AreaOrigin.y;
+        position.y = m_CollectablePrefab.transform.position.y + m_OffsetY;
+        position += m_AreaOrigin;
         m_CurrentCollectable.transform.position = position;
         m_CurrentCollectable.gameObject.SetActive(true);
     }
