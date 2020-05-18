@@ -51,4 +51,11 @@ public class GameEvents : MonoBehaviour
     {
         OnIncreaseScore?.Invoke(amount);
     }
+
+    public static event Action<int> OnUpdateScoreVisuals;
+
+    public static void UpdateScoreVisuals(int currentScore)
+    {
+        OnUpdateScoreVisuals?.Invoke(currentScore);
+    }
 }
