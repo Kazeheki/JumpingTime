@@ -89,7 +89,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2501905140261101333}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -110,3 +110,4 @@ MonoBehaviour:
   m_TimeToLive: 3
   m_TimeForIndication: 1
   m_BlinkInterval: 0.2
+  m_ScoreValue: 3

@@ -13,6 +13,9 @@ public class Collectable : MonoBehaviour
     [SerializeField]
     private float m_BlinkInterval = .1f;
 
+    [SerializeField]
+    private int m_ScoreValue = 1;
+
     private void OnEnable()
     {
         GetComponent<MeshRenderer>().enabled = true;
@@ -45,5 +48,14 @@ public class Collectable : MonoBehaviour
     private void Disapear()
     {
         this.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            GameEvents.IncreaseScore(m_ScoreValue);
+            Disapear();
+        }
     }
 }
