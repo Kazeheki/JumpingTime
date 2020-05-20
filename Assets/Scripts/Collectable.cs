@@ -58,6 +58,7 @@ public class Collectable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameEvents.IncreaseScore(m_ScoreValue);
+            AudioManager.Instance.Play("CoinCollect");
             Disapear();
         }
     }
