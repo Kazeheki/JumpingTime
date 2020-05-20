@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 87063694}
   - component: {fileID: 87063695}
   - component: {fileID: 87063696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm Minute Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 134471047}
   - component: {fileID: 134471048}
   - component: {fileID: 134471049}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arm Hour Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 316971409}
   - component: {fileID: 316971408}
   - component: {fileID: 316971407}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 368061727}
   - component: {fileID: 368061726}
   - component: {fileID: 368061729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,8 @@ GameObject:
   - component: {fileID: 589101270}
   - component: {fileID: 589101269}
   - component: {fileID: 589101268}
-  m_Layer: 0
+  - component: {fileID: 589101271}
+  m_Layer: 8
   m_Name: Hour Mark 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,6 +682,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589101266}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &589101271
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589101266}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.05
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.13
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +790,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &724681974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724681976}
+  - component: {fileID: 724681975}
+  m_Layer: 0
+  m_Name: === EnemyManager ===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &724681975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724681974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d245a89d1818a40b10d0adb46316ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EnemyPrefab: {fileID: 6757548692198297586, guid: cbe3a74942dc3d44696ca0f76fd1d276,
+    type: 3}
+  m_IntervalInSeconds: 10
+  m_AreaOrigin: {x: 0, y: 0, z: 0}
+  m_Radius: 2
+  m_OffsetY: 0.3
+  m_Target: {fileID: 1090536416}
+--- !u!4 &724681976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724681974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &884093322
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +852,7 @@ GameObject:
   - component: {fileID: 884093326}
   - component: {fileID: 884093325}
   - component: {fileID: 884093324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Face Outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +1187,7 @@ GameObject:
   - component: {fileID: 1090536423}
   - component: {fileID: 1090536422}
   - component: {fileID: 1090536424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1284,7 +1351,8 @@ GameObject:
   - component: {fileID: 1205646187}
   - component: {fileID: 1205646186}
   - component: {fileID: 1205646189}
-  m_Layer: 0
+  - component: {fileID: 1205646190}
+  m_Layer: 8
   m_Name: Arm Hour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1378,6 +1446,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Damage: 1
+--- !u!208 &1205646190
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205646184}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1466049433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1514,8 @@ GameObject:
   - component: {fileID: 1472906375}
   - component: {fileID: 1472906374}
   - component: {fileID: 1472906377}
-  m_Layer: 0
+  - component: {fileID: 1472906378}
+  m_Layer: 8
   m_Name: Arm Minute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1524,6 +1609,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Damage: 1
+--- !u!208 &1472906378
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472906372}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1478186412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1637,8 @@ GameObject:
   - component: {fileID: 1478186416}
   - component: {fileID: 1478186415}
   - component: {fileID: 1478186414}
-  m_Layer: 0
+  - component: {fileID: 1478186417}
+  m_Layer: 8
   m_Name: Hour Mark 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1617,6 +1719,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478186412}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1478186417
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478186412}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.05
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.13
 --- !u!1 &1731972734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1747,8 @@ GameObject:
   - component: {fileID: 1731972738}
   - component: {fileID: 1731972737}
   - component: {fileID: 1731972736}
-  m_Layer: 0
+  - component: {fileID: 1731972739}
+  m_Layer: 8
   m_Name: Hour Mark 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1710,6 +1829,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731972734}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1731972739
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731972734}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.05
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.13
 --- !u!1 &1827942802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,6 +1877,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1877123908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877123910}
+  - component: {fileID: 1877123909}
+  m_Layer: 0
+  m_Name: Enemy NavMesh Surface
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1877123909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877123908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -1372625422
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 55
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.06666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 76032409b6614a54cadc37cbb5c49a4c, type: 2}
+--- !u!4 &1877123910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877123908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1948040476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,7 +1949,8 @@ GameObject:
   - component: {fileID: 1948040480}
   - component: {fileID: 1948040479}
   - component: {fileID: 1948040478}
-  m_Layer: 0
+  - component: {fileID: 1948040481}
+  m_Layer: 8
   m_Name: Hour Mark 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1835,3 +2031,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948040476}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!208 &1948040481
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948040476}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.05
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.13
