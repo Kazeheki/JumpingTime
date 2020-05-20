@@ -914,12 +914,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d245a89d1818a40b10d0adb46316ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnemyPrefab: {fileID: 6757548692198297586, guid: cbe3a74942dc3d44696ca0f76fd1d276,
+  m_EnemyPrefab: {fileID: 7097684359384100305, guid: f992a8243a029e3458cdb516c0bce253,
     type: 3}
   m_IntervalInSeconds: 10
   m_AreaOrigin: {x: 0, y: 0, z: 0}
   m_Radius: 2
-  m_OffsetY: 0.3
+  m_OffsetY: 0.5
   m_Target: {fileID: 181483413}
 --- !u!4 &724681976
 Transform:
