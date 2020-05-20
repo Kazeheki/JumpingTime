@@ -60,6 +60,8 @@ public class Health : MonoBehaviour
             m_CurrentHealth = 0;
         }
 
+        AudioManager.Instance.Play("Damage");
+
         NotifyListeners();
     }
 
