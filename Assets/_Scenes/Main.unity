@@ -1791,6 +1791,11 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 699813253eb85f4499552f0f95eb34ee, type: 3}
     Volume: 1
     Loop: 0
+  - Source: {fileID: 0}
+    Name: Jumping
+    Clip: {fileID: 8300000, guid: 523ae3d1ce88252489688288233db471, type: 3}
+    Volume: 1
+    Loop: 0
 --- !u!4 &1711279840
 Transform:
   m_ObjectHideFlags: 0
