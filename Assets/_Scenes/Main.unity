@@ -573,7 +573,7 @@ MonoBehaviour:
   m_IntervalInSeconds: 5
   m_AreaOrigin: {x: 0, y: 0.1, z: 0}
   m_Radius: 2.4
-  m_OffsetY: 0.3
+  m_OffsetY: 0.5
 --- !u!4 &408746347
 Transform:
   m_ObjectHideFlags: 0

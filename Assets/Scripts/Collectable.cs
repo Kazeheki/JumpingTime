@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(MeshRenderer))]
 public class Collectable : MonoBehaviour
 {
     [SerializeField]
@@ -18,7 +17,11 @@ public class Collectable : MonoBehaviour
 
     private void OnEnable()
     {
-        GetComponent<MeshRenderer>().enabled = true;
+        if (GetComponentInChildren<MeshRenderer>() == null)
+        {
+            throw new System.Exception("SETUP EXCEPTION: Collectable doesn't have child with MeshRenderer||name: " + name);
+        }
+        GetComponentInChildren<MeshRenderer>().enabled = true;
         StartCoroutine(DisappearingRoutine());
     }
 
@@ -41,7 +44,7 @@ public class Collectable : MonoBehaviour
         while (this.gameObject.activeInHierarchy)
         {
             yield return new WaitForSeconds(m_BlinkInterval);
-            GetComponent<MeshRenderer>().enabled = !GetComponent<MeshRenderer>().enabled;
+            GetComponentInChildren<MeshRenderer>().enabled = !GetComponentInChildren<MeshRenderer>().enabled;
         }
     }
 
