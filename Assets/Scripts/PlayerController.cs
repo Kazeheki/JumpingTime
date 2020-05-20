@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
         if (m_Rigidbody.velocity.y == 0)
         {
             m_Rigidbody.AddForce(0, m_JumpPower, 0, ForceMode.Impulse);
+            AudioManager.Instance.Play("Jumping");
         }
     }
 
