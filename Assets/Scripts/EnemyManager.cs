@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField]
-    private EnemyController m_EnemyPrefab = null;
+    private Follower m_EnemyPrefab = null;
 
     [SerializeField]
     private float m_IntervalInSeconds = 10f;
@@ -21,7 +21,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     private Transform m_Target = null;
 
-    private EnemyController m_CurrentEnemy = null;
+    private Follower m_CurrentEnemy = null;
 
     private void Awake()
     {

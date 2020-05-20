@@ -2,7 +2,7 @@
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyController : MonoBehaviour
+public class Follower : MonoBehaviour
 {
     [SerializeField]
     private Transform m_Target = null;
@@ -22,14 +22,5 @@ public class EnemyController : MonoBehaviour
     public void SetTarget(Transform target)
     {
         m_Target = target;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            gameObject.SetActive(false);
-            GameEvents.Hit(1);
-        }
     }
 }
