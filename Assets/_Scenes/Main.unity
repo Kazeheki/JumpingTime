@@ -1791,16 +1791,25 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 699813253eb85f4499552f0f95eb34ee, type: 3}
     Volume: 1
     Loop: 0
+    PlayImmediately: 0
   - Source: {fileID: 0}
     Name: Jumping
     Clip: {fileID: 8300000, guid: 523ae3d1ce88252489688288233db471, type: 3}
     Volume: 1
     Loop: 0
+    PlayImmediately: 0
   - Source: {fileID: 0}
     Name: Damage
     Clip: {fileID: 8300000, guid: 0efeefe2ad3b8c442ae923ac79125ec3, type: 3}
     Volume: 1
     Loop: 0
+    PlayImmediately: 0
+  - Source: {fileID: 0}
+    Name: Theme
+    Clip: {fileID: 8300000, guid: de4adc7d555a2154b81bde422902288f, type: 3}
+    Volume: 0.05
+    Loop: 1
+    PlayImmediately: 1
 --- !u!4 &1711279840
 Transform:
   m_ObjectHideFlags: 0
