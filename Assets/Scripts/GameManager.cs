@@ -42,8 +42,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    public void RestartGame(InputAction.CallbackContext context)
     {
+        if (!context.performed)
+        {
+            return;
+        }
         Debug.Log("Triggered Restart");
         GameEvents.Restart();
     }
