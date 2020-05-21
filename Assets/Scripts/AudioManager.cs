@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
             sound.Source.clip = sound.Clip;
             sound.Source.volume = sound.Volume;
             sound.Source.loop = sound.Loop;
+            sound.Source.outputAudioMixerGroup = sound.AudioMixerGroup;
 
             if (sound.PlayImmediately)
             {

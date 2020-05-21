@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [Serializable]
 public class Sound
@@ -17,4 +18,6 @@ public class Sound
     public bool Loop;
 
     public bool PlayImmediately;
+
+    public AudioMixerGroup AudioMixerGroup;
 }
