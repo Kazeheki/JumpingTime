@@ -19,8 +19,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody m_Rigidbody = null;
     private Vector3 m_InitalPosition;
 
-    public void Jump()
+    public void Jump(InputAction.CallbackContext context)
     {
+        if (!context.performed)
+        {
+            return;
+        }
         if (m_Rigidbody.velocity.y == 0)
         {
             m_Rigidbody.AddForce(0, m_JumpPower, 0, ForceMode.Impulse);
