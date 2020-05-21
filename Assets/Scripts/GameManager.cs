@@ -48,16 +48,30 @@ public class GameManager : MonoBehaviour
         GameEvents.Restart();
     }
 
-    public void PauseGame(InputAction.CallbackContext context)
+    public void TogglePause(InputAction.CallbackContext context)
     {
-        if (context.performed && !SceneManager.GetSceneByName(m_PauseMenuSceneName).isLoaded)
+        if (!context.performed)
         {
-            Time.timeScale = 0;
-            SceneManager.LoadScene(m_PauseMenuSceneName, LoadSceneMode.Additive);
+            return;
+        }
+
+        if (SceneManager.GetSceneByName(m_PauseMenuSceneName).isLoaded)
+        {
+            ResumeGame();
+        }
+        else
+        {
+            PauseGame();
         }
     }
 
-    public void ResumeGame()
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene(m_PauseMenuSceneName, LoadSceneMode.Additive);
+    }
+
+    private void ResumeGame()
     {
         Time.timeScale = 1;
         SceneManager.UnloadSceneAsync(m_PauseMenuSceneName);
