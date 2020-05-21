@@ -38,6 +38,11 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find<Sound>(m_Sounds, sound => sound.Name == name);
         if (s != null)
         {
+            if (GameManager.IsGameOver && s.StopOnGameOver)
+            {
+                return;
+            }
+
             s.Source.Play();
         }
         else

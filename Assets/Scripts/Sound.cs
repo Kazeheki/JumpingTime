@@ -19,5 +19,7 @@ public class Sound
 
     public bool PlayImmediately;
 
+    public bool StopOnGameOver = true;
+
     public AudioMixerGroup AudioMixerGroup;
 }
