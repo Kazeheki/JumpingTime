@@ -33,6 +33,16 @@ public class EnemyManager : MonoBehaviour
         m_CurrentEnemy.gameObject.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        GameEvents.OnRestart += Reset;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnRestart -= Reset;
+    }
+
     private void Start()
     {
         StartCoroutine(SpawnRoutine());
@@ -63,5 +73,10 @@ public class EnemyManager : MonoBehaviour
         m_CurrentEnemy.transform.position = position;
         m_CurrentEnemy.gameObject.SetActive(true);
         m_CurrentEnemy.SetTarget(m_Target);
+    }
+
+    private void Reset()
+    {
+        m_CurrentEnemy.gameObject.SetActive(false);
     }
 }
