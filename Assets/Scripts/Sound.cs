@@ -15,4 +15,6 @@ public class Sound
     public float Volume = 1f;
 
     public bool Loop;
+
+    public bool PlayImmediately;
 }

@@ -24,6 +24,11 @@ public class AudioManager : MonoBehaviour
             sound.Source.clip = sound.Clip;
             sound.Source.volume = sound.Volume;
             sound.Source.loop = sound.Loop;
+
+            if (sound.PlayImmediately)
+            {
+                sound.Source.Play();
+            }
         }
     }
 
