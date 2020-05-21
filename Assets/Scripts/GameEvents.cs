@@ -58,4 +58,18 @@ public class GameEvents : MonoBehaviour
     {
         OnUpdateScoreVisuals?.Invoke(currentScore);
     }
+
+    public static event Action OnPause;
+
+    public static void PauseGame()
+    {
+        OnPause?.Invoke();
+    }
+
+    public static event Action OnResume;
+
+    public static void ResumeGame()
+    {
+        OnResume?.Invoke();
+    }
 }

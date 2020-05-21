@@ -25,6 +25,16 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void RestartGame()
+    {
+        GameEvents.Restart();
+    }
+
+    public void Resume()
+    {
+        GameEvents.ResumeGame();
+    }
+
     public void ToggleMuteAll(bool value)
     {
         if (value)
