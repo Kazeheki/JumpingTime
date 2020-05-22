@@ -1003,9 +1003,10 @@ MonoBehaviour:
     type: 3}
   m_IntervalInSeconds: 10
   m_AreaOrigin: {x: 0, y: 0, z: 0}
-  m_Radius: 2
+  m_Radius: 2.24
   m_OffsetY: 0.5
   m_Target: {fileID: 181483413}
+  m_SafetyRadius: 1
 --- !u!4 &724681976
 Transform:
   m_ObjectHideFlags: 0

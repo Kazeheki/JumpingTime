@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -20,6 +21,9 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField]
     private Transform m_Target = null;
+
+    [SerializeField]
+    private float m_SafetyRadius = 1f;
 
     private Follower m_CurrentEnemy = null;
 
@@ -64,19 +68,39 @@ public class EnemyManager : MonoBehaviour
             return; // don't change if still active.
         }
 
+        Vector3 position;
+        do
+        {
+            position = GetRandomPossitionWithOffset();
+        } while (Vector3.Distance(m_Target.position, position) < m_SafetyRadius);
+
+        m_CurrentEnemy.transform.position = position;
+        m_CurrentEnemy.gameObject.SetActive(true);
+        m_CurrentEnemy.SetTarget(m_Target);
+    }
+
+    private Vector3 GetRandomPossitionWithOffset()
+    {
         Vector3 position = Random.insideUnitCircle * m_Radius;
         // insideUnitCircle will only set x and y
         // collectable will move on x and z axis though.
         position.z = position.y;
         position.y = m_EnemyPrefab.transform.position.y + m_OffsetY;
         position += m_AreaOrigin;
-        m_CurrentEnemy.transform.position = position;
-        m_CurrentEnemy.gameObject.SetActive(true);
-        m_CurrentEnemy.SetTarget(m_Target);
+        return position;
     }
 
     private void Reset()
     {
         m_CurrentEnemy.gameObject.SetActive(false);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Handles.color = Color.red;
+        Handles.DrawWireDisc(m_AreaOrigin, Vector3.up, m_Radius);
+
+        Handles.color = Color.green;
+        Handles.DrawWireDisc(m_Target.position, Vector3.up, m_SafetyRadius);
     }
 }
