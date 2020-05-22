@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class CollectableManager : MonoBehaviour
@@ -62,5 +63,11 @@ public class CollectableManager : MonoBehaviour
         position += m_AreaOrigin;
         m_CurrentCollectable.transform.position = position;
         m_CurrentCollectable.gameObject.SetActive(true);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Handles.color = Color.yellow;
+        Handles.DrawWireDisc(m_AreaOrigin, Vector3.up, m_Radius);
     }
 }
