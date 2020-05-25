@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
+        Time.timeScale = 0;
         GameEvents.OnGameOver += OnGameOver;
         GameEvents.OnRestart += OnRestart;
         GameEvents.OnResume += ResumeGame;
@@ -93,7 +94,10 @@ public class GameManager : MonoBehaviour
     private void ResumeGame()
     {
         Time.timeScale = 1;
-        SceneManager.UnloadSceneAsync(m_PauseMenuSceneName);
+        if (SceneManager.GetSceneByName(m_PauseMenuSceneName).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(m_PauseMenuSceneName);
+        }
     }
 
     public static bool IsGameRunning => !m_GameOver;
