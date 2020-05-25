@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (!context.performed)
+        if (!context.started)
         {
             return;
         }
