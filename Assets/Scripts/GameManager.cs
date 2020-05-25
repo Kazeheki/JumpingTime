@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string m_PauseMenuSceneName = "PauseMenu";
 
+    [SerializeField]
+    private string m_GameOverSceneName = "GameOverMenu";
+
     private static bool m_GameOver;
 
     private void OnEnable()
@@ -25,20 +28,27 @@ public class GameManager : MonoBehaviour
 
     private void OnGameOver()
     {
-        Debug.Log("Game Over");
         Time.timeScale = 0;
         m_GameOver = true;
+        if (!SceneManager.GetSceneByName(m_GameOverSceneName).isLoaded)
+        {
+            SceneManager.LoadScene(m_GameOverSceneName, LoadSceneMode.Additive);
+        }
     }
 
     private void OnRestart()
     {
-        Debug.Log("Restarting Game");
         Time.timeScale = 1;
         m_GameOver = false;
 
         if (SceneManager.GetSceneByName(m_PauseMenuSceneName).isLoaded)
         {
             SceneManager.UnloadSceneAsync(m_PauseMenuSceneName);
+        }
+
+        if (SceneManager.GetSceneByName(m_GameOverSceneName).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(m_GameOverSceneName);
         }
     }
 
@@ -54,6 +64,11 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause(InputAction.CallbackContext context)
     {
+        if (IsGameOver)
+        {
+            return;
+        }
+
         if (!context.performed)
         {
             return;

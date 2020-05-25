@@ -95,6 +95,8 @@ public class EnemyManager : MonoBehaviour
         m_CurrentEnemy.gameObject.SetActive(false);
     }
 
+#if UNITY_EDITOR
+
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
@@ -103,4 +105,6 @@ public class EnemyManager : MonoBehaviour
         Handles.color = Color.green;
         Handles.DrawWireDisc(m_Target.position, Vector3.up, m_SafetyRadius);
     }
+
+#endif
 }
