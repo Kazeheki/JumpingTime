@@ -820,13 +820,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0a251b52fc79e4da4283d70ec8a932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CollectablePrefab: {fileID: 2070459946153676189, guid: 39abd6d77e819574b8b12bdf886148c0,
+  m_Prefab: {fileID: 2070459946153676189, guid: 39abd6d77e819574b8b12bdf886148c0,
     type: 3}
-  m_Parent: {fileID: 899357620}
-  m_IntervalInSeconds: 5
-  m_AreaOrigin: {x: 0, y: 0.1, z: 0}
   m_Radius: 2.12
   m_OffsetY: 0.5
+  m_AreaOrigin: {x: 0, y: 0.1, z: 0}
+  m_Parent: {fileID: 899357620}
+  m_IntervalInSeconds: 5
 --- !u!4 &408746347
 Transform:
   m_ObjectHideFlags: 0
@@ -1157,12 +1157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d245a89d1818a40b10d0adb46316ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EnemyPrefab: {fileID: 7097684359384100305, guid: f992a8243a029e3458cdb516c0bce253,
+  m_Prefab: {fileID: 7097684359384100305, guid: f992a8243a029e3458cdb516c0bce253,
     type: 3}
-  m_IntervalInSeconds: 10
-  m_AreaOrigin: {x: 0, y: 0, z: 0}
   m_Radius: 2.24
   m_OffsetY: 0.5
+  m_AreaOrigin: {x: 0, y: 0, z: 0}
+  m_IntervalInSeconds: 10
   m_Target: {fileID: 181483413}
   m_SafetyRadius: 1
 --- !u!4 &724681976
