@@ -65,12 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause(InputAction.CallbackContext context)
     {
-        if (IsGameOver)
-        {
-            return;
-        }
-
-        if (!context.performed)
+        if (IsGameOver || !context.performed)
         {
             return;
         }

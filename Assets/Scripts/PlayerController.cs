@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     private float m_MovementSpeed = 1f;
 
     private Rigidbody m_Rigidbody = null;
-    private Vector3 m_InitalPosition;
 
     public void Jump(InputAction.CallbackContext context)
     {
@@ -55,7 +54,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
-        m_InitalPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
 
     private void Update()
