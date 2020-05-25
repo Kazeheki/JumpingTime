@@ -1377,8 +1377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399dc06e28623ca44a42f321c7f3be6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShakeAmount: 2
-  m_DecreaseAmount: 0.2
+  m_ShakeAmount: 0.03
+  m_DecreaseAmount: 0.3
 --- !u!1 &1205646184
 GameObject:
   m_ObjectHideFlags: 0
