@@ -61,6 +61,7 @@ public class Health : MonoBehaviour
         }
 
         AudioManager.Instance.Play("Damage");
+        GameEvents.ShakeScreen();
 
         NotifyListeners();
     }
