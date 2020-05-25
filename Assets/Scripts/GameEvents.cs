@@ -79,4 +79,11 @@ public class GameEvents : MonoBehaviour
     {
         OnFinalScore?.Invoke(score);
     }
+
+    public static event Action OnShakeScreen;
+
+    public static void ShakeScreen()
+    {
+        OnShakeScreen?.Invoke();
+    }
 }
