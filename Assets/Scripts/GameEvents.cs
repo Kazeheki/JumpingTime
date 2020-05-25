@@ -72,4 +72,11 @@ public class GameEvents : MonoBehaviour
     {
         OnResume?.Invoke();
     }
+
+    public static event Action<int> OnFinalScore;
+
+    public static void SendFinalScore(int score)
+    {
+        OnFinalScore?.Invoke(score);
+    }
 }

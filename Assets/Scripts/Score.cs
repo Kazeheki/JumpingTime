@@ -5,6 +5,8 @@ public class Score : MonoBehaviour
 {
     private int m_CurrentScore = 0;
 
+    public int CurrentScore => m_CurrentScore;
+
     private void Start()
     {
         StartCoroutine(NotifyWatchersWithYield());
@@ -14,12 +16,14 @@ public class Score : MonoBehaviour
     {
         GameEvents.OnIncreaseScore += OnIncrease;
         GameEvents.OnRestart += Reset;
+        GameEvents.OnGameOver += SendFinalScore;
     }
 
     private void OnDisable()
     {
         GameEvents.OnIncreaseScore -= OnIncrease;
         GameEvents.OnRestart -= Reset;
+        GameEvents.OnGameOver -= SendFinalScore;
     }
 
     private IEnumerator NotifyWatchersWithYield()
@@ -43,5 +47,10 @@ public class Score : MonoBehaviour
     private void NotifyWatchers()
     {
         GameEvents.UpdateScoreVisuals(m_CurrentScore);
+    }
+
+    private void SendFinalScore()
+    {
+        GameEvents.SendFinalScore(m_CurrentScore);
     }
 }

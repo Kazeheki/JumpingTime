@@ -65,9 +65,13 @@ public class CollectableManager : MonoBehaviour
         m_CurrentCollectable.gameObject.SetActive(true);
     }
 
+#if UNITY_EDITOR
+
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.yellow;
         Handles.DrawWireDisc(m_AreaOrigin, Vector3.up, m_Radius);
     }
+
+#endif
 }
