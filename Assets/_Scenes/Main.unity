@@ -264,6 +264,7 @@ MonoBehaviour:
   m_AroundX: 0
   m_AroundY: 1
   m_AroundZ: 0
+  m_Difficulty: {fileID: 957626985}
 --- !u!114 &87063696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +326,7 @@ MonoBehaviour:
   m_AroundX: 0
   m_AroundY: 1
   m_AroundZ: 0
+  m_Difficulty: {fileID: 957626985}
 --- !u!114 &134471049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,6 +1364,7 @@ GameObject:
   - component: {fileID: 957626981}
   - component: {fileID: 957626983}
   - component: {fileID: 957626984}
+  - component: {fileID: 957626985}
   m_Layer: 0
   m_Name: === GameManager ===
   m_TagString: Untagged
@@ -1486,6 +1489,30 @@ MonoBehaviour:
   m_DefaultActionMap: GameManager
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &957626985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957626980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45d2f890aa2c2e94cbe68b8c1bb0b621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Instance: {fileID: 0}
+  m_MinSpeedMultiplyer: 1
+  m_MaxSpeedMultiplyer: 2
+  m_CoinsPerLevel:
+  - level: 1
+    totalAmountForNextLevel: 5
+  - level: 2
+    totalAmountForNextLevel: 10
+  - level: 3
+    totalAmountForNextLevel: 20
+  - level: 4
+    totalAmountForNextLevel: 40
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
