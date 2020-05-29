@@ -22,7 +22,6 @@ public class RotateAround : MonoBehaviour
         float calculatedSpeed = m_RotationSpeed;
         if (m_Difficulty != null)
         {
-            Debug.Log("Speed Multiplyer: " + m_Difficulty.SpeedMultiplyer);
             calculatedSpeed *= m_Difficulty.SpeedMultiplyer;
         }
         float rotationValue = calculatedSpeed * Time.deltaTime;

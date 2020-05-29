@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Triggered Restart");
         GameEvents.Restart();
     }
 
