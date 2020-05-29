@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class InstructionsManager : MonoBehaviour
 {
     [SerializeField]
-    private InputAction m_StartAction;
+    private InputAction m_StartAction = null;
 
     private void Awake()
     {
