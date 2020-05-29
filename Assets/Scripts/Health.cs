@@ -25,6 +25,11 @@ public class Health : MonoBehaviour
 
     private void OnDeadlyHit()
     {
+        if (DevMode.IsActive && DevMode.IsGodModeActivated)
+        {
+            return; // don't count damage.
+        }
+
         m_CurrentHealth = 0;
         NotifyListeners();
     }
@@ -54,14 +59,19 @@ public class Health : MonoBehaviour
 
     private void OnHit(int damage)
     {
+        AudioManager.Instance.Play("Damage");
+        GameEvents.ShakeScreen();
+
+        if (DevMode.IsActive && DevMode.IsGodModeActivated)
+        {
+            return; // don't count damage.
+        }
+
         m_CurrentHealth -= damage;
         if (m_CurrentHealth < 0)
         {
             m_CurrentHealth = 0;
         }
-
-        AudioManager.Instance.Play("Damage");
-        GameEvents.ShakeScreen();
 
         NotifyListeners();
     }

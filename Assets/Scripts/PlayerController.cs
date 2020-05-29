@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
 
     private void FollowMouse()
     {
+        if (DevMode.IsActive && DevMode.IsMouseFollowingStopped)
+        {
+            return;
+        }
+
         Vector2 mousePosition = new Vector2(Pointer.current.position.x.ReadValue(), Pointer.current.position.y.ReadValue());
         Ray ray = m_Camera.ScreenPointToRay(mousePosition);
 
