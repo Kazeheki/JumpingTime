@@ -26,7 +26,7 @@ public class HealthListener : MonoBehaviour
         {
             while (m_hearts.Count() < max)
             {
-                m_hearts.Add(((GameObject)Instantiate(Resources.Load("Heart"), transform)).GetComponent<Heart>());
+                m_hearts.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Heart"), transform)).GetComponent<Heart>());
             }
         }
 
