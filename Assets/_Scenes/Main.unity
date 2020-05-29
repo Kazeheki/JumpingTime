@@ -1471,17 +1471,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1984416782}
-        m_MethodName: OnClickStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: 515c9df1-0c52-41c4-96c1-8c88f97b3ef5
     m_ActionName: GameManager/Jump[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
@@ -2776,6 +2765,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d5e6b5a2e1c094b9b1ee41a1b1a5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_StartAction:
+    m_Name: Start
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 2f01b3cd-4878-4a09-9d2c-985c755648c2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 698a6ed7-7d14-4fc1-be70-f361a6487cc1
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Start
+      m_Flags: 0
 --- !u!114 &1984416783
 MonoBehaviour:
   m_ObjectHideFlags: 0
