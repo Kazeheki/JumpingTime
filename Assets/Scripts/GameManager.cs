@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string m_GameOverSceneName = "GameOverMenu";
 
-    private static bool m_GameOver;
-
     private void OnEnable()
     {
         Time.timeScale = 0;
@@ -30,7 +28,7 @@ public class GameManager : MonoBehaviour
     private void OnGameOver()
     {
         Time.timeScale = 0;
-        m_GameOver = true;
+        IsGameOver = true;
         if (!SceneManager.GetSceneByName(m_GameOverSceneName).isLoaded)
         {
             SceneManager.LoadScene(m_GameOverSceneName, LoadSceneMode.Additive);
@@ -40,7 +38,7 @@ public class GameManager : MonoBehaviour
     private void OnRestart()
     {
         Time.timeScale = 1;
-        m_GameOver = false;
+        IsGameOver = false;
 
         if (SceneManager.GetSceneByName(m_PauseMenuSceneName).isLoaded)
         {
@@ -95,9 +93,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static bool IsGameRunning => !m_GameOver;
+    public static bool IsGameRunning => !IsGameOver;
 
-    public static bool IsGameOver => m_GameOver;
+    public static bool IsGameOver { get; private set; }
 
     public static bool IsGamePaused => Time.timeScale == 0;
 }
