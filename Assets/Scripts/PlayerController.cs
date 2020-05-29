@@ -20,10 +20,11 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (!context.started)
+        if (!context.started || GameManager.IsGamePaused)
         {
             return;
         }
+
         if (m_Rigidbody.velocity.y == 0)
         {
             m_Rigidbody.AddForce(0, m_JumpPower, 0, ForceMode.Impulse);

@@ -98,4 +98,6 @@ public class GameManager : MonoBehaviour
     public static bool IsGameRunning => !m_GameOver;
 
     public static bool IsGameOver => m_GameOver;
+
+    public static bool IsGamePaused => Time.timeScale == 0;
 }
