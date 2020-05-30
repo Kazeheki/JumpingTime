@@ -1,5 +1,6 @@
 # JumpingTime
-Small jumping game with time theme
+Small jumping game with time theme.
+Build with Unity 2019
 
 ## Dependencies
 - **TextMesh Pro** (install inside Unity)
