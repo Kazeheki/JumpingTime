@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -49,11 +50,17 @@ public class PlayerController : MonoBehaviour
 
         Vector2 mousePosition = new Vector2(Pointer.current.position.x.ReadValue(), Pointer.current.position.y.ReadValue());
         Ray ray = m_Camera.ScreenPointToRay(mousePosition);
+        // fill all bits of 8 layers
+        int layerMask = 255;
+        // remove bit of "Ignore Raycast"
+        layerMask -= LayerMask.NameToLayer("Ignore Raycast");
 
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, layerMask))
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(hit.point.x, this.transform.position.y, hit.point.z), Time.deltaTime * m_MovementSpeed);
+            Vector3 newPosition = new Vector3(hit.point.x, this.transform.position.y, hit.point.z);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, newPosition, Time.deltaTime * m_MovementSpeed);
+            Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
         }
     }
 
