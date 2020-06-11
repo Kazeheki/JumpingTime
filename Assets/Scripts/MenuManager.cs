@@ -58,4 +58,9 @@ public class MenuManager : MonoBehaviour
             m_Standard.TransitionTo(m_AudioTransitionTime);
         }
     }
+
+    public void ToggleInput()
+    {
+        GameManager.UseMouse = !GameManager.UseMouse;
+    }
 }

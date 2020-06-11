@@ -16,9 +16,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float m_MovementSpeed = 1f;
 
-    [SerializeField]
-    private bool m_UseMouse = true;
-
     private Rigidbody m_Rigidbody = null;
     private Vector2 m_KeyboardDirection = Vector2.zero;
 
@@ -84,15 +81,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void OnEnable()
+    {
+        GameEvents.OnRestart += OnReset;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnRestart -= OnReset;
     }
 
     private void Update()
     {
         Fall();
-        if (m_UseMouse)
+        if (GameManager.UseMouse)
         {
             FollowMouse();
         }
@@ -100,5 +107,10 @@ public class PlayerController : MonoBehaviour
         {
             MoveWithKeyboard();
         }
+    }
+
+    private void OnReset()
+    {
+        m_KeyboardDirection = Vector2.zero;
     }
 }

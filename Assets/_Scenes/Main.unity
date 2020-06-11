@@ -373,7 +373,6 @@ MonoBehaviour:
   m_FallMultiplier: 1.2
   m_JumpPower: 3
   m_MovementSpeed: 3
-  m_UseMouse: 0
 --- !u!54 &181483408
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1441,10 +1440,6 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 558520e7-6947-403f-885f-2ac3dabc7800
-    m_ActionName: GameManager/Restart[/Keyboard/r]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 957626981}
         m_MethodName: TogglePause
@@ -1489,8 +1484,8 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ad9c9e0a-b1fc-4bdd-86ac-30f478eb9ca5
     m_ActionName: GameManager/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Mouse
   m_DefaultActionMap: GameManager
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -1628,6 +1623,7 @@ GameObject:
   - component: {fileID: 1033220880}
   - component: {fileID: 1033220879}
   - component: {fileID: 1033220881}
+  - component: {fileID: 1033220882}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -1792,6 +1788,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1033220882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033220877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d407777cc6c6b944d9d55ba1baff5335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MouseText: '- hit left mouse button to continue -'
+  m_KeyboardText: '- hit space to continue -'
 --- !u!1 &1205646184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +2807,14 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 698a6ed7-7d14-4fc1-be70-f361a6487cc1
       m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Start
+      m_Flags: 0
+    - m_Name: 
+      m_Id: a60b3ea2-f50e-46bd-8383-524808264942
+      m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
       m_Groups: 
