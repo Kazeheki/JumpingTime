@@ -2,6 +2,7 @@
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(PlayerInput))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -9,6 +10,18 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private string m_GameOverSceneName = "GameOverMenu";
+
+    private PlayerInput m_PlayerInput = null;
+
+    private void Awake()
+    {
+        m_PlayerInput = GetComponent<PlayerInput>();
+    }
+
+    private void Start()
+    {
+        m_PlayerInput.SwitchCurrentControlScheme(InputSystem.devices[UseMouse ? 1 : 0]);
+    }
 
     private void OnEnable()
     {
@@ -97,4 +110,6 @@ public class GameManager : MonoBehaviour
     public static bool IsGameOver { get; private set; }
 
     public static bool IsGamePaused => Time.timeScale == 0;
+
+    public static bool UseMouse = true;
 }
