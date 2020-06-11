@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -17,7 +16,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float m_MovementSpeed = 1f;
 
+    [SerializeField]
+    private bool m_UseMouse = true;
+
     private Rigidbody m_Rigidbody = null;
+    private Vector2 m_KeyboardDirection = Vector2.zero;
 
     public void Jump(InputAction.CallbackContext context)
     {
@@ -33,12 +36,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Move(InputAction.CallbackContext context)
+    {
+        if (GameManager.IsGameOver)
+        {
+            return;
+        }
+
+        m_KeyboardDirection = context.ReadValue<Vector2>();
+    }
+
     private void Fall()
     {
         if (m_Rigidbody.velocity.y < 0)
         {
             m_Rigidbody.velocity += Vector3.up * Physics.gravity.y * m_FallMultiplier * Time.deltaTime;
         }
+    }
+
+    private void MoveWithKeyboard()
+    {
+        var x = transform.position.x + (m_KeyboardDirection.normalized.x * m_MovementSpeed * Time.deltaTime);
+        var z = transform.position.z + (m_KeyboardDirection.normalized.y * m_MovementSpeed * Time.deltaTime);
+        transform.position = new Vector3(x, transform.position.y, z);
     }
 
     private void FollowMouse()
@@ -72,6 +92,13 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Fall();
-        FollowMouse();
+        if (m_UseMouse)
+        {
+            FollowMouse();
+        }
+        else
+        {
+            MoveWithKeyboard();
+        }
     }
 }
