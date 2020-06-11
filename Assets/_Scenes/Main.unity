@@ -373,6 +373,7 @@ MonoBehaviour:
   m_FallMultiplier: 1.2
   m_JumpPower: 3
   m_MovementSpeed: 3
+  m_UseMouse: 0
 --- !u!54 &181483408
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1473,6 +1474,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 515c9df1-0c52-41c4-96c1-8c88f97b3ef5
     m_ActionName: GameManager/Jump[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 181483407}
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ad9c9e0a-b1fc-4bdd-86ac-30f478eb9ca5
+    m_ActionName: GameManager/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GameManager
